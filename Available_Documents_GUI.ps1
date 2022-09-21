@@ -17,6 +17,8 @@ function Generate-Form{
 	$main_form.Width = 600
 	$main_form.Height = 100
 	$main_form.AutoSize = $true
+    $main_form.FormBorderStyle = 'Fixed3D'
+    $main_form.MaximizeBox = $false
 
 	$Label = New-Object System.Windows.Forms.Label
 	$Label.Text = "GUID"
@@ -124,6 +126,8 @@ function Generate-Links($str_FormNames_Array){
     $FormListMenu.Width = 800
     $FormListMenu.Height = 400
     $FormListMenu.AutoSize = $true
+    $FormListMenu.FormBorderStyle = 'Fixed3D'
+    $FormListMenu.MaximizeBox = $false
     
     #TODO: Implement Duplicates color the array based on Duplicates or not.
     $nodecount = $str_FormNames_Array.Length #Size of the Array
