@@ -12,40 +12,40 @@ Add-Type -assembly System.Windows.Forms
 #---------------------------------------------------------------------
 function Generate-Form{
 
-	$main_form = New-Object System.Windows.Forms.Form
-	$main_form.Text ='YAPI Document Finder'
-	$main_form.Width = 600
-	$main_form.Height = 100
-	$main_form.AutoSize = $true
+    $main_form = New-Object System.Windows.Forms.Form
+    $main_form.Text ='YAPI Document Finder'
+    $main_form.Width = 600
+    $main_form.Height = 100
+    $main_form.AutoSize = $true
     $main_form.FormBorderStyle = 'Fixed3D'
     $main_form.MaximizeBox = $false
-
-	$Label = New-Object System.Windows.Forms.Label
-	$Label.Text = "GUID"
-	$Label.Font = 'Microsoft Sans Serif,12'
-	$Label.Location  = New-Object System.Drawing.Point(10,10)
-	$Label.AutoSize = $true
-	$main_form.Controls.Add($Label)
-
-	$textbox = New-Object System.Windows.Forms.TextBox
-	$textbox.Location = New-Object System.Drawing.Point(80,10)
-	$textbox.Text = ""
-	$textbox.Font = 'Microsoft Sans Serif,12'
-	$textbox.Height = "24"
-	$textbox.Width = "380"
-	$textbox.MaxLength = "38" # GUIDs are 38 characters long.
-	$textbox.AutoSize = $false
-	$main_form.Controls.Add($textbox)
-
-	$button = New-Object System.Windows.Forms.Button
-	$Button.Location = New-Object System.Drawing.Point(470,10)
-	$Button.Size = New-Object System.Drawing.Size(80, 24)
-	$Button.Text = "Search"
-	$Button.Font = "Microsoft Sans Serif,12"
-	$Button.Add_Click({ReadForms})
-	$main_form.Controls.Add($Button)
-
-	$main_form.ShowDialog()| Out-Null
+    
+    $Label = New-Object System.Windows.Forms.Label
+    $Label.Text = "GUID"
+    $Label.Font = 'Microsoft Sans Serif,12'
+    $Label.Location  = New-Object System.Drawing.Point(10,10)
+    $Label.AutoSize = $true
+    $main_form.Controls.Add($Label)
+    
+    $textbox = New-Object System.Windows.Forms.TextBox
+    $textbox.Location = New-Object System.Drawing.Point(80,10)
+    $textbox.Text = ""
+    $textbox.Font = 'Microsoft Sans Serif,12'
+    $textbox.Height = "24"
+    $textbox.Width = "380"
+    $textbox.MaxLength = "38" # GUIDs are 38 characters long.
+    $textbox.AutoSize = $false
+    $main_form.Controls.Add($textbox)
+    
+    $button = New-Object System.Windows.Forms.Button
+    $Button.Location = New-Object System.Drawing.Point(470,10)
+    $Button.Size = New-Object System.Drawing.Size(80, 24)
+    $Button.Text = "Search"
+    $Button.Font = "Microsoft Sans Serif,12"
+    $Button.Add_Click({ReadForms})
+    $main_form.Controls.Add($Button)
+    
+    $main_form.ShowDialog()| Out-Null
 
 }
 
